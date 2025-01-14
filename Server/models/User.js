@@ -1,3 +1,4 @@
+const { type } = require("express/lib/response");
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
@@ -38,7 +39,13 @@ const userSchema = new mongoose.Schema({
     },
     image: {
         type: String,
-        required: true
+        required: true,
+    },
+    token:{
+        type:String,
+    },
+    resetPasswordExpires:{
+        type:Date,
     },
     courseProgress:{
         {
